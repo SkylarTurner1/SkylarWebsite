@@ -1,0 +1,35 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    /* 3D beveled border */
+    border: 3px solid;
+    border-color: #ffffff #9a9a9a #6a6a6a #dcdcdc;
+    /* top right bottom left */
+    background: linear-gradient(#fff, #eee);
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.12),
+        /* outer drop shadow */
+        inset 0 2px 0 rgba(255, 255, 255, 0.6),
+        /* inner top highlight */
+        inset 0 -2px 0 rgba(0, 0, 0, 0.06);
+        /* inner bottom shadow */
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 20px;
+        /*Creates a circular profile picture container*/
+    }
+
+    .profile-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block; 
+        /*Centers pfp within the container*/
+    }
+}
