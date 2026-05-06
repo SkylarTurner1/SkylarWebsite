@@ -1,0 +1,417 @@
+/* ===================================================
+   SPARKLE & SHINE — style.css
+   Palette: orchid, lavender, blush, sage green
+=================================================== */
+
+:root {
+  --rose:      #d946a8;
+  --violet:    #9b4dab;
+  --lavender:  #c084fc;
+  --deep:      #6b21a8;
+  --dark:      #2e1035;
+  --mid:       #6b3878;
+  --cream:     #fdf4ff;
+  --white:     #ffffff;
+  --shadow:    rgba(130, 50, 170, 0.18);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+  --radius:       22px;
+  --radius-sm:    12px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── BODY — floral tiled background ── */
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  min-height: 100vh;
+
+  /* soft base color so tiles have a backdrop */
+  background-color: #fce8ff;
+
+  /* Tiled floral SVG pattern as CSS background */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3C!-- background wash --%3E%3Crect width='320' height='320' fill='%23fce8ff'/%3E%3C!-- ===== VINES ===== --%3E%3Cpath d='M0 160 C40 140 30 100 70 80 C110 60 100 20 140 10' stroke='%2386a84e' stroke-width='2.2' fill='none' stroke-linecap='round' opacity='0.55'/%3E%3Cpath d='M160 320 C140 280 160 250 140 210 C120 170 150 140 130 100 C110 60 140 30 120 0' stroke='%2386a84e' stroke-width='1.8' fill='none' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M320 0 C290 40 300 70 270 100 C240 130 260 160 230 190' stroke='%2386a84e' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.5'/%3E%3Cpath d='M0 0 C30 30 20 70 50 90 C80 110 60 150 90 170' stroke='%236d9440' stroke-width='1.6' fill='none' stroke-linecap='round' opacity='0.4'/%3E%3Cpath d='M320 320 C280 290 290 250 260 230 C230 210 250 170 220 150' stroke='%236d9440' stroke-width='1.6' fill='none' stroke-linecap='round' opacity='0.4'/%3E%3C!-- ===== LEAVES ===== --%3E%3Cellipse cx='70' cy='80' rx='14' ry='6' fill='%2390b855' opacity='0.5' transform='rotate(-35 70 80)'/%3E%3Cellipse cx='140' cy='10' rx='12' ry='5' fill='%2378a048' opacity='0.45' transform='rotate(20 140 10)'/%3E%3Cellipse cx='50' cy='90' rx='11' ry='5' fill='%2390b855' opacity='0.4' transform='rotate(50 50 90)'/%3E%3Cellipse cx='140' cy='210' rx='13' ry='6' fill='%2378a048' opacity='0.5' transform='rotate(-25 140 210)'/%3E%3Cellipse cx='130' cy='100' rx='11' ry='5' fill='%2390b855' opacity='0.4' transform='rotate(40 130 100)'/%3E%3Cellipse cx='270' cy='100' rx='13' ry='6' fill='%2378a048' opacity='0.48' transform='rotate(30 270 100)'/%3E%3Cellipse cx='230' cy='190' rx='12' ry='5' fill='%2390b855' opacity='0.45' transform='rotate(-20 230 190)'/%3E%3Cellipse cx='260' cy='230' rx='13' ry='6' fill='%2378a048' opacity='0.45' transform='rotate(15 260 230)'/%3E%3Cellipse cx='90' cy='170' rx='11' ry='5' fill='%2390b855' opacity='0.4' transform='rotate(-40 90 170)'/%3E%3Cellipse cx='220' cy='150' rx='12' ry='5' fill='%2378a048' opacity='0.4' transform='rotate(35 220 150)'/%3E%3C!-- ===== ROSES (top-left) ===== --%3E%3Ccircle cx='30' cy='30' r='9' fill='%23e879b0' opacity='0.85'/%3E%3Cellipse cx='30' cy='21' rx='5' ry='7' fill='%23f472b6' opacity='0.8' transform='rotate(0 30 30)'/%3E%3Cellipse cx='30' cy='21' rx='5' ry='7' fill='%23ec4899' opacity='0.8' transform='rotate(60 30 30)'/%3E%3Cellipse cx='30' cy='21' rx='5' ry='7' fill='%23f472b6' opacity='0.8' transform='rotate(120 30 30)'/%3E%3Cellipse cx='30' cy='21' rx='5' ry='7' fill='%23ec4899' opacity='0.8' transform='rotate(180 30 30)'/%3E%3Cellipse cx='30' cy='21' rx='5' ry='7' fill='%23f472b6' opacity='0.8' transform='rotate(240 30 30)'/%3E%3Cellipse cx='30' cy='21' rx='5' ry='7' fill='%23ec4899' opacity='0.8' transform='rotate(300 30 30)'/%3E%3Ccircle cx='30' cy='30' r='5' fill='%23fce7f3'/%3E%3C!-- ===== ROSE (bottom-right) ===== --%3E%3Ccircle cx='290' cy='290' r='9' fill='%23e879b0' opacity='0.85'/%3E%3Cellipse cx='290' cy='281' rx='5' ry='7' fill='%23f472b6' opacity='0.8' transform='rotate(0 290 290)'/%3E%3Cellipse cx='290' cy='281' rx='5' ry='7' fill='%23ec4899' opacity='0.8' transform='rotate(60 290 290)'/%3E%3Cellipse cx='290' cy='281' rx='5' ry='7' fill='%23f472b6' opacity='0.8' transform='rotate(120 290 290)'/%3E%3Cellipse cx='290' cy='281' rx='5' ry='7' fill='%23ec4899' opacity='0.8' transform='rotate(180 290 290)'/%3E%3Cellipse cx='290' cy='281' rx='5' ry='7' fill='%23f472b6' opacity='0.8' transform='rotate(240 290 290)'/%3E%3Cellipse cx='290' cy='281' rx='5' ry='7' fill='%23ec4899' opacity='0.8' transform='rotate(300 290 290)'/%3E%3Ccircle cx='290' cy='290' r='5' fill='%23fce7f3'/%3E%3C!-- ===== ROSE (top-right) ===== --%3E%3Ccircle cx='290' cy='30' r='8' fill='%23db2777' opacity='0.75'/%3E%3Cellipse cx='290' cy='22' rx='4.5' ry='6.5' fill='%23ec4899' opacity='0.75' transform='rotate(0 290 30)'/%3E%3Cellipse cx='290' cy='22' rx='4.5' ry='6.5' fill='%23f472b6' opacity='0.75' transform='rotate(72 290 30)'/%3E%3Cellipse cx='290' cy='22' rx='4.5' ry='6.5' fill='%23ec4899' opacity='0.75' transform='rotate(144 290 30)'/%3E%3Cellipse cx='290' cy='22' rx='4.5' ry='6.5' fill='%23f472b6' opacity='0.75' transform='rotate(216 290 30)'/%3E%3Cellipse cx='290' cy='22' rx='4.5' ry='6.5' fill='%23ec4899' opacity='0.75' transform='rotate(288 290 30)'/%3E%3Ccircle cx='290' cy='30' r='4' fill='%23fce7f3'/%3E%3C!-- ===== ROSE (bottom-left) ===== --%3E%3Ccircle cx='30' cy='290' r='8' fill='%23db2777' opacity='0.75'/%3E%3Cellipse cx='30' cy='282' rx='4.5' ry='6.5' fill='%23ec4899' opacity='0.75' transform='rotate(0 30 290)'/%3E%3Cellipse cx='30' cy='282' rx='4.5' ry='6.5' fill='%23f472b6' opacity='0.75' transform='rotate(72 30 290)'/%3E%3Cellipse cx='30' cy='282' rx='4.5' ry='6.5' fill='%23ec4899' opacity='0.75' transform='rotate(144 30 290)'/%3E%3Cellipse cx='30' cy='282' rx='4.5' ry='6.5' fill='%23f472b6' opacity='0.75' transform='rotate(216 30 290)'/%3E%3Cellipse cx='30' cy='282' rx='4.5' ry='6.5' fill='%23ec4899' opacity='0.75' transform='rotate(288 30 290)'/%3E%3Ccircle cx='30' cy='290' r='4' fill='%23fce7f3'/%3E%3C!-- ===== LAVENDER blooms ===== --%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(0 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(45 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(90 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(135 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(180 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(225 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(270 160 30)'/%3E%3Cellipse cx='160' cy='30' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(315 160 30)'/%3E%3Ccircle cx='160' cy='30' r='5' fill='%23f5f3ff'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(0 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(45 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(90 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(135 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(180 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(225 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23a855f7' opacity='0.75' transform='rotate(270 160 290)'/%3E%3Cellipse cx='160' cy='290' rx='4' ry='7' fill='%23c084fc' opacity='0.75' transform='rotate(315 160 290)'/%3E%3Ccircle cx='160' cy='290' r='5' fill='%23f5f3ff'/%3E%3C!-- ===== DAISIES ===== --%3E%3Cellipse cx='160' cy='160' rx='3.5' ry='6' fill='%23fbcfe8' opacity='0.8' transform='rotate(0 160 160)'/%3E%3Cellipse cx='160' cy='160' rx='3.5' ry='6' fill='%23fce7f3' opacity='0.8' transform='rotate(60 160 160)'/%3E%3Cellipse cx='160' cy='160' rx='3.5' ry='6' fill='%23fbcfe8' opacity='0.8' transform='rotate(120 160 160)'/%3E%3Cellipse cx='160' cy='160' rx='3.5' ry='6' fill='%23fce7f3' opacity='0.8' transform='rotate(180 160 160)'/%3E%3Cellipse cx='160' cy='160' rx='3.5' ry='6' fill='%23fbcfe8' opacity='0.8' transform='rotate(240 160 160)'/%3E%3Cellipse cx='160' cy='160' rx='3.5' ry='6' fill='%23fce7f3' opacity='0.8' transform='rotate(300 160 160)'/%3E%3Ccircle cx='160' cy='160' r='5' fill='%23fde68a'/%3E%3Cellipse cx='80' cy='240' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(0 80 240)'/%3E%3Cellipse cx='80' cy='240' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(60 80 240)'/%3E%3Cellipse cx='80' cy='240' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(120 80 240)'/%3E%3Cellipse cx='80' cy='240' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(180 80 240)'/%3E%3Cellipse cx='80' cy='240' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(240 80 240)'/%3E%3Cellipse cx='80' cy='240' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(300 80 240)'/%3E%3Ccircle cx='80' cy='240' r='4' fill='%23fde68a'/%3E%3Cellipse cx='240' cy='80' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(0 240 80)'/%3E%3Cellipse cx='240' cy='80' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(60 240 80)'/%3E%3Cellipse cx='240' cy='80' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(120 240 80)'/%3E%3Cellipse cx='240' cy='80' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(180 240 80)'/%3E%3Cellipse cx='240' cy='80' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(240 240 80)'/%3E%3Cellipse cx='240' cy='80' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(300 240 80)'/%3E%3Ccircle cx='240' cy='80' r='4' fill='%23fde68a'/%3E%3Cellipse cx='240' cy='240' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(0 240 240)'/%3E%3Cellipse cx='240' cy='240' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(60 240 240)'/%3E%3Cellipse cx='240' cy='240' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(120 240 240)'/%3E%3Cellipse cx='240' cy='240' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(180 240 240)'/%3E%3Cellipse cx='240' cy='240' rx='3' ry='5' fill='%23fbcfe8' opacity='0.7' transform='rotate(240 240 240)'/%3E%3Cellipse cx='240' cy='240' rx='3' ry='5' fill='%23fce7f3' opacity='0.7' transform='rotate(300 240 240)'/%3E%3Ccircle cx='240' cy='240' r='4' fill='%23fde68a'/%3E%3C!-- tiny dots --%3E%3Ccircle cx='110' cy='110' r='3' fill='%23e879b0' opacity='0.4'/%3E%3Ccircle cx='210' cy='110' r='3' fill='%23a855f7' opacity='0.4'/%3E%3Ccircle cx='110' cy='210' r='3' fill='%23a855f7' opacity='0.4'/%3E%3Ccircle cx='210' cy='210' r='3' fill='%23e879b0' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+}
+
+/* ── PAGE WRAPPER — centered ── */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ── HERO CARD ── */
+.hero {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(200, 130, 230, 0.3);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem 2.5rem;
+  box-shadow: 0 8px 48px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+}
+
+.sparkles {
+  display: flex;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--rose);
+  opacity: 0.7;
+  animation: twinkle 3s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+/* Profile */
+.profile-ring {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #d946a8, #9b4dab, #6d28d9);
+  box-shadow: 0 6px 32px rgba(155, 77, 171, 0.4);
+  flex-shrink: 0;
+}
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  display: block;
+}
+
+.tagline {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--violet);
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--dark);
+  line-height: 1.2;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.bio {
+  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--mid);
+}
+.bio strong { color: var(--violet); font-weight: 600; }
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.badges span {
+  background: rgba(240, 220, 255, 0.6);
+  border: 1.5px solid rgba(180, 120, 220, 0.4);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--mid);
+}
+
+/* ── BOOKING CARD ── */
+.booking-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 48px var(--shadow);
+  border: 1.5px solid rgba(200, 130, 230, 0.25);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #f0d4ff 0%, #e0b8f5 100%);
+  padding: 2rem 2.5rem 1.8rem;
+  text-align: center;
+  border-bottom: 1.5px solid rgba(160, 100, 200, 0.2);
+}
+.card-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+}
+.card-header p {
+  font-size: 0.9rem;
+  color: var(--mid);
+}
+
+.form-body {
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin-bottom: 1rem;
+}
+
+/* Services cards */
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.service-card {
+  cursor: pointer;
+  user-select: none;
+  display: block;
+}
+.service-card input[type="checkbox"] { display: none; }
+
+.service-card-inner {
+  border: 2px solid #e4b8f5;
+  border-radius: var(--radius);
+  background: #fdf5ff;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+.service-card:hover .service-card-inner {
+  border-color: var(--lavender);
+  background: #f5e8ff;
+  box-shadow: 0 4px 18px rgba(155, 77, 171, 0.14);
+  transform: translateY(-2px);
+}
+.service-card input:checked + .service-card-inner {
+  border-color: var(--violet);
+  background: linear-gradient(135deg, #f0d8ff, #e8c8fa);
+  box-shadow: 0 6px 24px rgba(155, 77, 171, 0.22);
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+.service-icon { font-size: 1.3rem; }
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  flex: 1;
+}
+.service-check-indicator {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #d4a0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: transparent;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.service-card input:checked + .service-card-inner .service-check-indicator {
+  background: var(--violet);
+  border-color: var(--violet);
+  color: #fff;
+}
+
+.service-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 1.5rem;
+}
+
+.col-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin-bottom: 0.5rem;
+  border-bottom: 1.5px solid #e0b8f5;
+  padding-bottom: 0.3rem;
+}
+
+.service-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.service-col ul li {
+  font-size: 0.82rem;
+  color: var(--mid);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+.service-col ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--rose);
+  font-size: 0.75rem;
+}
+
+.service-addon {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--mid);
+  background: rgba(200, 140, 240, 0.12);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--lavender);
+}
+
+/* Fields */
+.fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--dark);
+  background: #fdf5ff;
+  border: 1.5px solid #e4b8f5;
+  border-radius: var(--radius-sm);
+  padding: 0.72rem 1rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: #c0a0d8; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--lavender);
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.22);
+}
+.field textarea { resize: vertical; min-height: 80px; }
+.field select { appearance: none; cursor: pointer; }
+
+/* Send button */
+.send-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #d946a8, #9b4dab, #6d28d9);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  box-shadow: 0 6px 30px rgba(155, 77, 171, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.send-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 38px rgba(155, 77, 171, 0.55);
+}
+.send-btn:active { transform: translateY(0); }
+.send-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.form-note {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: #b090c0;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  font-size: 0.83rem;
+  color: var(--mid);
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  background: linear-gradient(135deg, #d946a8, #9b4dab);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  box-shadow: 0 8px 32px rgba(120, 40, 160, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .service-columns { grid-template-columns: 1fr; }
+  .hero { padding: 2rem 1.25rem; }
+  .form-body { padding: 1.5rem 1.25rem; }
+  .card-header { padding: 1.5rem 1.25rem; }
+  .fields-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: 1; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
